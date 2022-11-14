@@ -1,0 +1,122 @@
+function CountingGame.init 0
+push constant 0
+pop static 0
+push constant 14
+pop static 1
+push constant 0
+pop static 2
+push constant 0
+return
+function CountingGame.StartGame 2
+push constant 0
+not
+pop local 0
+label WHILE_EXP0
+push local 0
+not
+if-goto WHILE_END0
+push static 0
+push static 1
+call Output.moveCursor 2
+pop temp 0
+push constant 0
+call String.new 1
+call Keyboard.readInt 1
+pop local 1
+push local 1
+push static 2
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push static 2
+push constant 1
+add
+pop static 2
+push static 0
+push static 1
+call Output.moveCursor 2
+pop temp 0
+push constant 3
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push constant 0
+pop local 0
+label IF_END0
+goto WHILE_EXP0
+label WHILE_END0
+call CountingGame.GameOver 0
+pop temp 0
+push constant 0
+return
+function CountingGame.GameOver 0
+push constant 0
+push constant 40
+call Output.moveCursor 2
+pop temp 0
+push constant 18
+call String.new 1
+push constant 89
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push static 2
+push constant 1
+sub
+pop static 2
+push static 2
+call Output.printInt 1
+pop temp 0
+push constant 0
+return
+function CountingGame.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

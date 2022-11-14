@@ -1,0 +1,19 @@
+/*
+	Initializes a new Counting Game and starts it
+*/
+class Main {
+
+	/*
+		initializes and starts new game
+	*/
+	function void main() {
+
+		do Output.moveCursor(0,0);
+		do Output.printString("Count from 0: ");
+
+		do CountingGame.init();
+		do CountingGame.StartGame();
+
+		return;
+	}
+}

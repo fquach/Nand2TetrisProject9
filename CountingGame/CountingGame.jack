@@ -1,0 +1,48 @@
+class CountingGame {
+
+	static int numPos1;
+	static int numPos2;
+	static int num;
+
+	function void init() {
+		let numPos1 = 0;
+		let numPos2 = 14;
+		let num = 0;
+
+		return;
+	}
+
+	function void StartGame(){
+		var boolean playing;
+		var int input;
+		let playing = true;
+
+		while(playing){
+			do Output.moveCursor(numPos1,numPos2);
+			let input  = Keyboard.readInt("");
+			
+			if(input = num){
+				let num = num + 1;
+				do Output.moveCursor(numPos1,numPos2);
+				do Output.printString("   ");
+			} else {
+				let playing = false;
+			}
+		}
+		do CountingGame.GameOver();
+		return;
+	}
+	
+	function void GameOver(){
+		do Output.moveCursor(0,40);
+		do Output.printString("You counted up to ");
+		let num = num - 1;
+		do Output.printInt(num);
+		return;
+	}
+
+	method void dispose() {
+		do Memory.deAlloc(this);
+		return;
+	}
+}
